@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from "@angular/forms";
 
 declare var $: any;
 
@@ -9,7 +10,8 @@ declare var $: any;
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor() {}
 
   ngOnInit(): void {
     $(window).scroll(function () {
@@ -45,8 +47,7 @@ export class MainComponent implements OnInit {
       }, 500)
     });
   });
-
-
+  
   }
 
 }

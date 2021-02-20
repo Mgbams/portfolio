@@ -17,6 +17,7 @@ body {
   position: fixed;
   line-height: 65px;
   text-align: center;
+  z-index: 100;
 }
 
 .nav div.logo {
@@ -29,7 +30,7 @@ body {
 .nav div.logo a {
   text-decoration: none;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .nav div.logo a:hover {
@@ -61,7 +62,7 @@ body {
   text-decoration: none;
   color: #fff;
   line-height: 65px;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 
 .nav div.main_list ul li a:hover {
@@ -131,7 +132,7 @@ body {
   .nav div.main_list ul li a {
     text-align: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 20px;
   }
   .nav div.media_button {
@@ -437,4 +438,9 @@ body {
 .bounce {
   animation-name: bounce-animation;
   animation-duration: 2s;
+}
+
+//wave
+svg {
+  border-bottom: none !important;
 }

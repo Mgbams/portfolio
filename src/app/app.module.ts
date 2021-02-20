@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MdbModule } from 'mdb-angular-ui-kit';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
+import { MaterialModule } from './material/material.module';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import { MainComponent } from './main/main.component';
     BrowserModule,
     AppRoutingModule,
     MdbModule,
-    BrowserAnimationsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
