@@ -99,6 +99,63 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  //projects
+  .stacked-cards {
+    display: flex;
+    flex-direction: column;
+
+    .cards,
+    .cards2 {
+      width: 100% !important;
+    }
+
+    .cards2 {
+      margin-top: 30px;
+    }
+  }
+
+  //Contact me
+  .contact-form-container {
+    max-width: 100%;
+    overflow-x: hidden;
+
+    .container-form-flex {
+      display: flex;
+      flex-direction: column;
+
+      .contact-details,
+      form {
+        width: 100%;
+      }
+
+      form {
+        .subject,
+        .message,
+        .name,
+        .email {
+          display: block;
+          width: 80%;
+          margin: auto;
+        }
+      }
+
+      .contact-details {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 30%;
+
+        h5 {
+          color: white;
+        }
+
+        .phone {
+          padding: 25px 20px;
+        }
+      }
+    }
+  }
+
   .navTrigger {
     display: block;
   }
@@ -505,7 +562,7 @@ svg {
     text-align: left;
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
-    min-width: 595px;
+    width: 45%;
   }
   .cards {
     transform: rotateX(11deg) rotateY(16.5deg);
@@ -528,7 +585,7 @@ svg {
     transform-style: preserve-3d;
     transform: translatez(35px);
     transition: transform 200ms ease-out;
-    width: 175px;
+    width: 23%; //sizes of the individual projects
     text-align: center;
 
     &:not(:last-child) {
@@ -756,5 +813,23 @@ input {
 
   .chips-spacer {
     margin-bottom: 25px;
+  }
+}
+
+#services {
+  margin-bottom: 50px;
+
+  .services-tab-icon {
+    color: #542f34;
+    font-size: 1.8rem;
+    margin-right: 20px;
+  }
+  mat-tab:not(:last-child) {
+    margin-right: 50px;
+  }
+  h2 {
+    color: #00887a;
+    font-size: 3rem;
+    padding: 40px 0px;
   }
 }

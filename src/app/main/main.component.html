@@ -126,17 +126,35 @@
   </div>
 </div>
 
-<div class="container" id="services">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Services we offer</h2>
-      <p class="lead">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio
-        velit inventore, expedita quo laboriosam possimus ea consequatur vitae,
-        doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit
-        dignissimos.
-      </p>
-    </div>
+<div id="services">
+  <div class="col-lg-6 mx-auto">
+    <h2>Services offerts</h2>
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="services-tab-icon">computer</mat-icon>
+          Web Design
+        </ng-template>
+        Content 1
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="services-tab-icon">auto_awesome_motion</mat-icon>
+          Web Development
+        </ng-template>
+        Content 2
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="services-tab-icon">tablet_android</mat-icon>
+          Fully Responsive
+        </ng-template>
+
+        Content 3
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>
 
@@ -226,7 +244,7 @@
         <h5>PHONE&nbsp;:</h5>
         <p>
           <mat-chip-list aria-label="Numéro de téléphone">
-            <mat-chip color="accent">+337 82 48 59 57</mat-chip>
+            <mat-chip color="accent" class="phone">+337 82 48 59 57</mat-chip>
           </mat-chip-list>
         </p>
       </div>
