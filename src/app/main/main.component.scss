@@ -30,7 +30,7 @@ body {
 .nav div.logo a {
   text-decoration: none;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .nav div.logo a:hover {
@@ -62,7 +62,7 @@ body {
   text-decoration: none;
   color: #fff;
   line-height: 65px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .nav div.main_list ul li a:hover {
@@ -831,5 +831,29 @@ input {
     color: #00887a;
     font-size: 3rem;
     padding: 40px 0px;
+    text-align: center;
+  }
+}
+
+// Services
+.responsive-tab-content-icon {
+  color: #00887a;
+}
+
+.development-tab-content-icon {
+  color: #05386b;
+}
+
+.design-tab-icon {
+  color: #46344e;
+}
+
+/**Formatting mat-list-item to avoid cutting words and adding ellipses**/
+.mat-list-item.mat-list-item-word-wrap {
+  height: initial !important;
+  margin-bottom: 20px;
+  .mat-line {
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;
   }
 }

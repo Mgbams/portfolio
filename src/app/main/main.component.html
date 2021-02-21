@@ -102,11 +102,11 @@
   class="container wow slideInLeft"
   id="about"
   data-wow-duration="2s"
-  data-wow-delay="1s"
+  data-wow-delay=".4s"
 >
   <div class="row">
     <div class="col-lg-8 mx-auto">
-      <h2 class="wow rollIn" data-wow-duration="2s" data-wow-delay="3s">
+      <h2 class="wow rollIn" data-wow-duration="2s" data-wow-delay=".8s">
         About this page
       </h2>
       <p class="lead">
@@ -142,24 +142,135 @@
           <mat-icon class="services-tab-icon">computer</mat-icon>
           Web Design
         </ng-template>
-        Content 1
+        <mat-list>
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="design-tab-icon">stream</mat-icon>
+            <div mat-line>Création de conceptions de sites Web.</div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="design-tab-icon">stream</mat-icon>
+            <div mat-line>
+              Rencontre avec les clients pour discuter des exigences et / ou de
+              l'avancement du projet.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="design-tab-icon">stream</mat-icon>
+            <div mat-line>
+              Créer des produits conviviaux, efficaces et attrayants.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="design-tab-icon">stream</mat-icon>
+            <div mat-line>
+              Développer des compétences et une expertise dans les logiciels /
+              langages de programmation appropriés tels que HTML et Javascript.
+            </div>
+          </mat-list-item>
+        </mat-list>
       </mat-tab>
 
+      <!--Development Tab-->
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="services-tab-icon">auto_awesome_motion</mat-icon>
           Web Development
         </ng-template>
-        Content 2
+        <mat-list>
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="development-tab-content-icon"
+              >donut_large</mat-icon
+            >
+            <div mat-line>
+              Une solide compréhension de l'interface utilisateur, de la
+              compatibilité entre navigateurs, des fonctions Web générales et
+              des normes.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="development-tab-content-icon"
+              >donut_large</mat-icon
+            >
+            <div mat-line>
+              Expertise approfondie et expérience pratique des applications Web
+              et des langages de programmation tels que HTML, CSS, JavaScript,
+              JQuery et API.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="development-tab-content-icon"
+              >donut_large</mat-icon
+            >
+            <div mat-line>
+              Bonne compréhension des principes de sécurité et de leur
+              application aux applications de commerce électronique.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="development-tab-content-icon"
+              >donut_large</mat-icon
+            >
+            <div mat-line>
+              Conception, codage et modification de sites Web, de la mise en
+              page à la fonction et selon les spécifications d'un client.
+            </div>
+          </mat-list-item>
+        </mat-list>
       </mat-tab>
 
+      <!--Responsive design tabs-->
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="services-tab-icon">tablet_android</mat-icon>
           Fully Responsive
         </ng-template>
+        <mat-list>
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="responsive-tab-content-icon"
+              >eco</mat-icon
+            >
+            <div mat-line>
+              Tirez parti des frameworks CSS existants tels que Materialise,
+              Bootstrap pour créer des sites réactifs.
+            </div>
+          </mat-list-item>
 
-        Content 3
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="responsive-tab-content-icon"
+              >eco</mat-icon
+            >
+            <div mat-line>
+              Immergé dans les principales techniques Web telles que les icônes
+              SVG, les images réactives et les transitions CSS.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="responsive-tab-content-icon"
+              >eco</mat-icon
+            >
+            <div mat-line>
+              Travaillez directement avec les designers pour faire ressortir la
+              meilleure expérience numérique.
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="mat-list-item-word-wrap">
+            <mat-icon mat-list-icon class="responsive-tab-content-icon"
+              >eco</mat-icon
+            >
+            <div mat-line>
+              Expérience de la fourniture de sites Web optimisés et testés sur
+              plusieurs navigateurs.
+            </div>
+          </mat-list-item>
+        </mat-list>
       </mat-tab>
     </mat-tab-group>
   </div>
