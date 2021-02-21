@@ -98,10 +98,17 @@
   </p>
 </section>
 
-<div class="container" id="about">
+<div
+  class="container wow slideInLeft"
+  id="about"
+  data-wow-duration="2s"
+  data-wow-delay="1s"
+>
   <div class="row">
     <div class="col-lg-8 mx-auto">
-      <h2>About this page</h2>
+      <h2 class="wow rollIn" data-wow-duration="2s" data-wow-delay="3s">
+        About this page
+      </h2>
       <p class="lead">
         This is a great place to talk about your webpage. This template is
         purposefully unstyled so you can use it as a boilerplate or starting
@@ -310,9 +317,9 @@
             matInput
             placeholder="Ex. Je vous contacte..."
             required
-            matTextareaAutosize
-            matAutosizeMinRows="8"
-            matAutosizeMaxRows="15"
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="8"
+            cdkAutosizeMaxRows="15"
           ></textarea>
         </mat-form-field>
       </div>
