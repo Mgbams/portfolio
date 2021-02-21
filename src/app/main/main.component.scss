@@ -494,7 +494,8 @@ svg {
     transform: translateZ(25px);
   }
 
-  .project-cards {
+  .project-card1,
+  .project-card2 {
     background: #fff;
     border-radius: 15px;
     box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.17);
@@ -535,12 +536,14 @@ svg {
     }
   }
 
-  .card__img {
+  .card__img,
+  .card__img2 {
     position: relative;
     height: 100%;
   }
 
-  .card__bg {
+  .card__bg,
+  .card__bg2 {
     bottom: -50px;
     left: -50px;
     position: absolute;
@@ -552,19 +555,22 @@ svg {
   }
 
   .card__one {
-    .card__img {
+    .card__img,
+    .card__img2 {
       top: 14px;
       right: -10px;
       height: 110%;
     }
-    .card__bg {
+    .card__bg,
+    .card__bg2 {
       background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_monobg.jpg")
         center / cover no-repeat;
     }
   }
 
   .card__two {
-    .card__img {
+    .card__img,
+    .card__img2 {
       top: 25px;
     }
     .card__bg {
@@ -574,12 +580,14 @@ svg {
   }
 
   .card__three {
-    .card__img {
+    .card__img,
+    .card__img2 {
       top: 5px;
       left: -4px;
       height: 110%;
     }
-    .card__bg {
+    .card__bg,
+    .card__bg2 {
       background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/3dr_howlbg.jpg")
         center / cover no-repeat;
     }
@@ -648,5 +656,105 @@ svg {
 
   .twitter__icon {
     height: 30px;
+  }
+}
+
+// Contact form
+.contact-form-container {
+  padding-top: 50px;
+
+  background-color: #222629;
+  width: 100%;
+  h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    margin-bottom: 50px;
+    color: #00887a;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  h1:hover {
+    color: white;
+  }
+}
+.name-email-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+mat-label {
+  font-size: 0.8rem;
+}
+input {
+  font-size: 1.2rem;
+  color: white;
+}
+.name,
+.email {
+  display: block;
+  width: 250px;
+}
+.subject,
+.message {
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+.message {
+  color: white;
+}
+.mat-icon-send {
+  font-size: 16px;
+  position: relative;
+  top: 3px;
+}
+.send-button {
+  float: right;
+}
+.container-form-flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  justify-content: space-between;
+
+  .contact-details {
+    width: 40%;
+    padding-left: 20px;
+    padding-top: 20px;
+    background: linear-gradient(
+        0deg,
+        rgba(84, 47, 52, 0.3),
+        rgba(84, 47, 52, 0.3)
+      ),
+      url("https://images.unsplash.com/photo-1507730961199-996c3e6ebdde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1487&q=80")
+        center / cover no-repeat;
+    h5 {
+      color: #00887a;
+      font-size: 0.8rem;
+    }
+
+    .adress {
+      padding: 25px 20px;
+    }
+  }
+
+  .contact-form {
+    margin: auto;
+    width: 50%;
+    padding: 50px 50px;
+    border: 1px inset #542f34;
+    background-color: #542f34;
+  }
+
+  .chips-spacer {
+    margin-bottom: 25px;
   }
 }

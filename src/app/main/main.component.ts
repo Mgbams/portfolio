@@ -50,5 +50,39 @@ export class MainComponent implements OnInit {
    
   }
 
+  animateCard1() {
+    console.log("card animation");
+
+    const cards = $("#card1");
+    const images = $(".card__img");
+    const backgrounds = $(".card__bg");
+    const range = 40;
+
+    // const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
+    const calcValue = (a: any, b: any) => (a/b*range-range/2).toFixed(1) // thanks @alice-mx
+
+    let timeout: any;
+    document.addEventListener('mousemove', ({x, y}) => {
+      if (timeout) {
+        window.cancelAnimationFrame(timeout);
+      }
+        
+      timeout = window.requestAnimationFrame(() => {
+        const yValue: any = calcValue(y, window.innerHeight);
+        const xValue: any = calcValue(x, window.innerWidth);
+
+        cards.csstransform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
+
+        [].forEach.call(images, (image: any) => {
+          image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
+        });
+
+        [].forEach.call(backgrounds, (background: any) => {
+          background.style.backgroundPosition = `${xValue*.45}px ${-yValue*.45}px`;
+        })
+      })
+    }, false);
+  }
+
 }
 
