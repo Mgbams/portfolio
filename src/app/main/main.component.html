@@ -9,7 +9,7 @@
           <a id="len1" href="#about" class="hoverable">About</a>
         </li>
         <li>
-          <a id="len2" href="#" class="hoverable">Portfolio</a>
+          <a id="len2" href="#portfolio" class="hoverable">Portfolio</a>
         </li>
         <li>
           <a id="len3" href="#services" class="hoverable">Services</a>
@@ -107,24 +107,84 @@
         data-wow-delay=".1s"
       >
         <h2>À propos de <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moi</h2>
-        <mat-vertical-stepper linear #stepper>
-          <mat-step label="Shipping Address">
+        <mat-vertical-stepper linear #stepper class="vertical-stepper">
+          <mat-step label="Diplômes et Formations">
             <p>Shipping Address Details</p>
           </mat-step>
 
           <!--Billing address is made optional-->
 
-          <mat-step label="Billing Address" optional>
+          <mat-step label="Expériences professionnelles" optional>
             <p>Billing Address Details</p>
             <div>
               <p>Go to a different step to see the error state</p>
             </div>
           </mat-step>
 
-          <mat-step label="Place Order">
-            <p>Place Order Details</p>
+          <mat-step label="Compétences">
+            <!--competence lists-->
+            <mat-list class="competence-lists">
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>Laravel / PHP</div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>Angular / React</div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>JavaScript / JQuery</div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>HTML5 / CSS3</div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>PostgreSQL / MySQL</div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>Bootstrap / Ionic</div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>WordPress / PrestaShop</div>
+              </mat-list-item>
+            </mat-list>
           </mat-step>
         </mat-vertical-stepper>
+
+        <mat-horizontal-stepper linear #stepper class="horizontal-stepper">
+          <mat-step label="Diplômes et Formations">
+            <p>Shipping Address Details</p>
+          </mat-step>
+
+          <mat-step label="Expériences">
+            <p>Place Order Details</p>
+          </mat-step>
+        </mat-horizontal-stepper>
       </div>
 
       <!--middle div-->
@@ -326,7 +386,8 @@
 
 <!--Parallax starts here-->
 <div class="parallax1"></div>
-<div style="height: 500px; background-color: lightpink; font-size: 36px">
+<div id="portfolio">
+  <h2 class="three-d-text">Portfolio</h2>
   <div class="stacked-cards" style="padding-top: 50px">
     <div class="cards project-card1" id="card1" (mouseenter)="animateCard1()">
       <h3>React</h3>
@@ -402,7 +463,7 @@
 
 <div class="parallax2"></div>
 <div class="contact-form-container" id="contact">
-  <h1>Contactez moi</h1>
+  <h1 class="three-d-text" id="contact-me-title">Contactez moi</h1>
   <div class="container-form-flex">
     <div class="contact-details">
       <!--phone-->
