@@ -106,10 +106,53 @@
         data-wow-duration="2s"
         data-wow-delay=".1s"
       >
-        <h2>À propos de <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moi</h2>
+        <mat-chip-list aria-label="name">
+          <mat-chip class="a-propos-title"
+            >À propos de <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moi</mat-chip
+          >
+        </mat-chip-list>
         <mat-vertical-stepper linear #stepper class="vertical-stepper">
           <mat-step label="Diplômes et Formations">
-            <p>Shipping Address Details</p>
+            <mat-list class="diplome-lists">
+              <mat-list-item class="diplome-items">
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>
+                  <span style="color: #00887a">Développeur web/web mobile</span>
+                  <br />
+                  Depuis octobre 2019 <br />
+                  M2i / LYON
+                </div>
+              </mat-list-item>
+
+              <mat-list-item class="diplome-items">
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>
+                  <span style="color: #00887a">
+                    Technicien de Maintenance <br />en informatique et
+                    Réseau</span
+                  >
+                  <br />
+                  D'octobre 2017 à septembre 2018 <br />
+                  CNAM / LYON
+                </div>
+              </mat-list-item>
+
+              <mat-list-item class="diplome-items">
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line class="mat-line">
+                  <span style="color: #00887a">Éducation Informatique </span
+                  ><br />
+                  D'octobre 2004 à juin 2009 <br />
+                  UNN Nsukka / NIGERIA
+                </div>
+              </mat-list-item>
+            </mat-list>
           </mat-step>
 
           <!--Billing address is made optional-->
