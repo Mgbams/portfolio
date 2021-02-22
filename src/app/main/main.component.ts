@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup } from "@angular/forms";
 import {NgwWowService} from 'ngx-wow';
 
@@ -11,24 +11,20 @@ declare var $: any;
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  
+ 
   constructor(private wowService: NgwWowService) {}
 
   ngOnInit(): void {
     $(window).scroll(function () {
     if ($(document).scrollTop() > 50) {
       $(".nav").addClass("affix");
-      console.log("OK");
       } else {
         $(".nav").removeClass("affix");
       }
     });
 
     $(".navTrigger").click(function () {
-      console.log("hello");
       $(".navTrigger").toggleClass("active");
-      console.log("Clicked menu");
       $("#mainListDiv").toggleClass("show_list");
       $("#mainListDiv").fadeIn();
     });
@@ -54,14 +50,7 @@ export class MainComponent implements OnInit {
     this.wowService.init();
   }
 
-  reset() {
-     /***Initialize wojs Animation as shown below ***/
-    this.wowService.init();
-  }
-
   animateCard1() {
-    console.log("card animation");
-
     const cards = $("#card1");
     const images = $(".card__img");
     const backgrounds = $(".card__bg");
@@ -91,6 +80,12 @@ export class MainComponent implements OnInit {
         })
       })
     }, false);
+  }
+
+  // Close the side navigation on button click
+  closeNav() {
+    $(".navTrigger").toggleClass("active");
+    $("#mainListDiv").toggleClass("show_list");
   }
 
 }
