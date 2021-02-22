@@ -99,6 +99,17 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  //About section
+  .about-card {
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      div {
+        width: 100% !important;
+      }
+    }
+  }
+
   //projects
   .stacked-cards {
     display: flex;
@@ -855,5 +866,45 @@ input {
   .mat-line {
     word-wrap: break-word !important;
     white-space: pre-wrap !important;
+  }
+}
+
+//About section
+.about-card {
+  width: 100% !important;
+
+  mat-card-content {
+    display: flex;
+    justify-content: space-between;
+    div {
+      width: 32%;
+    }
+
+    .left-div {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    .right-div {
+      mat-chip,
+      h5 {
+        text-transform: uppercase;
+      }
+
+      h5 {
+        font-size: 1.4rem;
+        letter-spacing: 1.7px;
+      }
+      mat-chip {
+        font-size: 2rem;
+        padding: 30px 30px;
+        background-color: palevioletred;
+        color: white;
+      }
+      .job-title {
+        margin-top: 20px;
+      }
+    }
   }
 }

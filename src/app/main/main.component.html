@@ -99,38 +99,76 @@
 </section>
 
 <div
-  class="container wow slideInLeft"
+  class="wow slideInLeft"
   id="about"
   data-wow-duration="2s"
   data-wow-delay=".4s"
 >
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2 class="wow rollIn" data-wow-duration="2s" data-wow-delay=".8s">
-        About this page
-      </h2>
-      <p class="lead">
-        This is a great place to talk about your webpage. This template is
-        purposefully unstyled so you can use it as a boilerplate or starting
-        point for you own landing page designs! This template features:
-      </p>
-      <ul>
-        <li>Clickable nav links that smooth scroll to page sections</li>
-        <li>
-          Responsive behavior when clicking nav links perfect for a one page
-          website
-        </li>
-        <li>
-          Bootstrap's scrollspy feature which highlights which section of the
-          page you're on in the navbar
-        </li>
-        <li>
-          Minimal custom CSS so you are free to explore your own unique design
-          options
-        </li>
-      </ul>
-    </div>
-  </div>
+  <mat-card class="about-card">
+    <mat-card-content>
+      <div class="left-div">
+        <h2>À propos de <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moi</h2>
+        <mat-vertical-stepper linear #stepper>
+          <mat-step label="Shipping Address">
+            <p>Shipping Address Details</p>
+          </mat-step>
+
+          <!--Billing address is made optional-->
+
+          <mat-step label="Billing Address" optional>
+            <p>Billing Address Details</p>
+            <div>
+              <p>Go to a different step to see the error state</p>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Place Order">
+            <p>Place Order Details</p>
+          </mat-step>
+        </mat-vertical-stepper>
+      </div>
+      <div>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </div>
+
+      <div class="right-div">
+        <h5>qui suis je</h5>
+        <mat-chip-list aria-label="name">
+          <mat-chip>mgbams kingsley</mat-chip>
+        </mat-chip-list>
+        <p class="job-title"><b>Développeur web Full-stack</b></p>
+        <p>
+          Web Developers design and update websites and online applications
+          using various programming languages and design tools. A regular
+          example resume for this job mentions responsibilities such as creating
+          webpage layouts, writing code, editing website content, and making
+          adjustments based on client feedback.
+        </p>
+        <p>
+          Those interested in a Web Developer position should emphasize in their
+          resumes web design experience, content management knowledge,
+          multimedia programming, time management, and creativity. Successful
+          candidates usually hold at least and Associate's Degree in a relevant
+          field, such as software
+        </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a
+        href="https://www.linkedin.com/in/kingsley-mgbams-33b781155/"
+        target="_blank"
+        mat-button
+        >LinkedIn</a
+      >
+      <a href="https://github.com/Mgbams" mat-button target="_blank">GitHub</a>
+    </mat-card-actions>
+  </mat-card>
 </div>
 
 <div id="services">
