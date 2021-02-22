@@ -98,15 +98,14 @@
   </p>
 </section>
 
-<div
-  class="wow slideInLeft"
-  id="about"
-  data-wow-duration="2s"
-  data-wow-delay=".4s"
->
+<div id="about">
   <mat-card class="about-card">
     <mat-card-content>
-      <div class="left-div">
+      <div
+        class="left-div wow slideInLeft"
+        data-wow-duration="2s"
+        data-wow-delay=".1s"
+      >
         <h2>À propos de <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moi</h2>
         <mat-vertical-stepper linear #stepper>
           <mat-step label="Shipping Address">
@@ -119,8 +118,6 @@
             <p>Billing Address Details</p>
             <div>
               <p>Go to a different step to see the error state</p>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
             </div>
           </mat-step>
 
@@ -129,15 +126,21 @@
           </mat-step>
         </mat-vertical-stepper>
       </div>
-      <div>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
+
+      <!--middle div-->
+      <div
+        class="middle-div wow bounceInDown"
+        data-wow-duration="2s"
+        data-wow-delay=".1s"
+      >
+        <!--profile photo here-->
       </div>
 
-      <div class="right-div">
+      <div
+        class="right-div wow slideInRight"
+        data-wow-duration="2s"
+        data-wow-delay=".1s"
+      >
         <h5>qui suis je</h5>
         <mat-chip-list aria-label="name">
           <mat-chip>mgbams kingsley</mat-chip>
@@ -159,14 +162,21 @@
         </p>
       </div>
     </mat-card-content>
-    <mat-card-actions>
-      <a
-        href="https://www.linkedin.com/in/kingsley-mgbams-33b781155/"
-        target="_blank"
-        mat-button
-        >LinkedIn</a
-      >
-      <a href="https://github.com/Mgbams" mat-button target="_blank">GitHub</a>
+    <mat-card-actions class="social-links">
+      <div>
+        <a
+          href="https://www.linkedin.com/in/kingsley-mgbams-33b781155/"
+          target="_blank"
+          mat-button
+        >
+          <i class="fab fa-linkedin"></i>LinkedIn</a
+        >
+      </div>
+      <div>
+        <a href="https://github.com/Mgbams" mat-button target="_blank"
+          ><i class="fab fa-github-square"></i>GitHub</a
+        >
+      </div>
     </mat-card-actions>
   </mat-card>
 </div>
