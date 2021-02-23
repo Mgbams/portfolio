@@ -104,6 +104,20 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .about-card .a-propos-div,
+  .my-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qui-suis-je,
+  .job-title {
+    text-align: center;
+  }
+  .service-offerts {
+    font-size: 2rem;
+  }
   // Stepper settings
   .horizontal-stepper {
     display: block;
@@ -834,11 +848,18 @@ input {
   mat-tab:not(:last-child) {
     margin-right: 50px;
   }
-  h2 {
+  .service-offerts {
     color: #00887a;
-    font-size: 3rem;
     padding: 40px 0px;
     text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 3px 0 #aaa, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 3px rgba(0, 0, 0, 0.1),
+      0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
+      0 3px 7px rgba(0, 0, 0, 0.25), 0 7px 7px rgba(0, 0, 0, 0.1),
+      0 17px 17px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -912,6 +933,7 @@ input {
       }
       .job-title {
         margin-top: 20px;
+        font-size: 1.3rem;
       }
     }
   }
@@ -948,6 +970,10 @@ input {
 }
 
 .three-d-text:hover {
+  color: #00887a;
+}
+.qui-suis-je,
+.job-title {
   color: #00887a;
 }
 
