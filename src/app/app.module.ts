@@ -10,6 +10,8 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgwWowModule } from 'ngx-wow';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NgwWowModule } from 'ngx-wow';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgwWowModule
+    NgwWowModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

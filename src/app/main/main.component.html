@@ -814,12 +814,26 @@
     </div>
 
     <!--Contact me form-->
-    <form class="contact-form">
+    <form
+      class="contact-form"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div class="name-email-container">
         <!--Name-->
         <mat-form-field class="name" appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput type="text" placeholder="Ex. Name" required />
+          <input
+            matInput
+            type="text"
+            formControlName="name"
+            placeholder="Ex. Name"
+            required
+          />
+          <!-- error -->
+          <mat-error *ngIf="errorHandling('name', 'required')">
+            You must provide a<strong> name</strong>
+          </mat-error>
         </mat-form-field>
 
         <!--Email-->
@@ -827,18 +841,33 @@
           <mat-label>Email</mat-label>
           <input
             type="email"
+            formControlName="email"
             matInput
             placeholder="Ex. king@example.com"
             required
           />
+          <!-- error -->
+          <mat-error *ngIf="!contactForm.controls['email'].valid">
+            {{ getErrorEmail() }}
+          </mat-error>
         </mat-form-field>
       </div>
 
-      <!--Name-->
+      <!--Subject-->
       <div class="subject">
         <mat-form-field class="subject" appearance="outline">
           <mat-label>Sujet</mat-label>
-          <input matInput type="text" placeholder="Ex. Sujet" required />
+          <input
+            matInput
+            type="text"
+            formControlName="subject"
+            placeholder="Ex. Sujet"
+            required
+          />
+          <!-- error -->
+          <mat-error *ngIf="errorHandling('subject', 'required')">
+            You must provide a<strong> subject</strong>
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -848,18 +877,28 @@
           <mat-label>Laissez un message</mat-label>
           <textarea
             matInput
+            formControlName="message"
             placeholder="Ex. Je vous contacte..."
             required
             cdkTextareaAutosize
             cdkAutosizeMinRows="8"
             cdkAutosizeMaxRows="15"
           ></textarea>
+          <!-- error -->
+          <mat-error *ngIf="!contactForm.controls['message'].valid">
+            Message field must be atleast 5 characters.
+          </mat-error>
         </mat-form-field>
       </div>
 
       <!--Send button-->
       <div>
-        <button mat-raised-button color="warn" class="send-button">
+        <button
+          mat-raised-button
+          color="warn"
+          class="send-button"
+          type="submit"
+        >
           <mat-icon class="mat-icon-send">send</mat-icon>
           Envoyer
         </button>
