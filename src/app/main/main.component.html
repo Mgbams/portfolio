@@ -416,7 +416,13 @@
 
 <div id="services">
   <div class="col-lg-6 mx-auto">
-    <h2 class="service-offerts">Services offerts</h2>
+    <h2
+      class="service-offerts wow slideInLeft"
+      data-wow-duration="3s"
+      data-wow-delay=".6s"
+    >
+      Services offerts
+    </h2>
     <mat-tab-group>
       <mat-tab>
         <ng-template mat-tab-label>
@@ -563,7 +569,13 @@
   <h2 class="three-d-text">Portfolio</h2>
   <div class="stacked-cards" style="padding-top: 50px">
     <!--REACT-->
-    <div class="cards project-card1" id="card1" (mouseenter)="animateCard1()">
+    <div
+      class="cards project-card1 wow slideInLeft"
+      id="card1"
+      (mouseenter)="animateCard1()"
+      data-wow-duration="2s"
+      data-wow-delay=".007s"
+    >
       <h3>React</h3>
       <h1>Projects</h1>
       <div class="card card__one">
@@ -617,7 +629,12 @@
     </div>
 
     <!--ANGULAR-->
-    <div class="cards2 project-card2" id="card2">
+    <div
+      class="cards2 project-card2 wow slideInRight"
+      id="card2"
+      data-wow-duration="2s"
+      data-wow-delay=".007s"
+    >
       <h3>Angular</h3>
       <h1>Projects</h1>
       <div class="card card__one">
@@ -653,7 +670,13 @@
     </div>
 
     <!--LARAVEL-->
-    <div class="cards2 project-card2" id="card2" style="margin-top: 40px">
+    <div
+      class="cards2 project-card2 wow slideInLeft"
+      id="card2"
+      style="margin-top: 40px"
+      data-wow-duration="2s"
+      data-wow-delay=".007s"
+    >
       <h3>Laravel</h3>
       <h1>Projects</h1>
       <div class="card card__one">
@@ -690,10 +713,12 @@
 
     <!--PHP-->
     <div
-      class="cards project-card1"
+      class="cards project-card1 wow slideInRight"
       style="margin-top: 40px"
       id="card1"
       (mouseenter)="animateCard1()"
+      data-wow-duration="2s"
+      data-wow-delay=".007s"
     >
       <h3>PHP</h3>
       <h1>Projects</h1>
