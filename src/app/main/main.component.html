@@ -847,7 +847,13 @@
             required
           />
           <!-- error -->
-          <mat-error *ngIf="!contactForm.controls['email'].valid">
+          <mat-error
+            *ngIf="
+              (!contactForm.controls['email'].valid &&
+                contactForm.controls['email'].touched) ||
+              !contactForm.valid
+            "
+          >
             {{ getErrorEmail() }}
           </mat-error>
         </mat-form-field>

@@ -9,8 +9,9 @@ import { MainComponent } from './main/main.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgwWowModule } from 'ngx-wow';
+import { HttpClientModule } from '@angular/common/http';
 
-import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+//import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 
 @NgModule({
@@ -20,14 +21,15 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     MdbModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     NgwWowModule,
-    MatSnackBarModule
+    //MatSnackBarModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

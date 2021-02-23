@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {NgwWowService} from 'ngx-wow';
 import {  Contact } from './../models/contact.model';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, FormArray } from '@angular/forms';
-import {MatSnackBar} from '@angular/material/snack-bar';
+//import {MatSnackBar} from '@angular/material/snack-bar';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
+import {SendEmailService} from './../shared/send-email.service';
 
 declare var $: any;
 
@@ -13,8 +16,15 @@ declare var $: any;
 })
 export class MainComponent implements OnInit {
   contactForm: FormGroup;
+  loading: boolean = false;
+  buttonText: string = "Envoyer";
  
-  constructor(private wowService: NgwWowService, private fb: FormBuilder, private _snackBar: MatSnackBar) {}
+  constructor(
+    private wowService: NgwWowService, 
+    private fb: FormBuilder, 
+    //private _snackBar: MatSnackBar,
+    private _sendEmailService: SendEmailService
+    ) {}
 
   ngOnInit(): void {
     // Contact form Using FormBuilder approach
@@ -110,23 +120,61 @@ export class MainComponent implements OnInit {
   }
 
   /* Handle form errors in Angular 11 */
-  public errorHandling = (control: string, error: string) => {
-  //console.log(this.contactForm.controls[control].hasError(error));
-  
+  public errorHandling = (control: string, error: string) => { 
     return this.contactForm.controls[control].hasError(error);
   }
+
   // Form submission
   onSubmit() {
-    console.log(this.contactForm.value);
-    console.log("form  NOT submitted");
     if (this.contactForm.valid) {
-     this.openSnackBar("Message successfully sent!", "");
+     //this.openSnackBar("Message successfully sent!", "");
+      this.successNotification();
+
+      /* Reset Form controls on submission */
+      this.contactForm.reset();
+      this.contactForm.controls['name'].setErrors(null);
+      this.contactForm.controls['email'].setErrors(null);
+      this.contactForm.controls['subject'].setErrors(null);
+      this.contactForm.controls['message'].setErrors(null);
     }
   }
 
-  openSnackBar(message, action) {
-    this._snackBar.open(message, action, {duration: 2000, panelClass: ['message-sent']});
-    // Use this method when you don't have an action button but want code executed when snackbar dismisses
+  // openSnackBar(message, action) {
+  //   this._snackBar.open(message, action, {duration: 2000, panelClass: ['message-sent']});
+  //   // Use this method when you don't have an action button but want code executed when snackbar dismisses
+  // }
+
+  //Sweet alert notification
+  successNotification(){
+    Swal.fire(`Hi, ${this.contactForm.get('name').value}`, 'Votre message a été envoyé avec succès!', 'success')
+  }
+
+  sendEmail() {
+    this.loading = true;
+    this.buttonText = "Envoyer .....";
+
+    let userContact = {
+      name: this.contactForm.get('name').value,
+      email: this.contactForm.get('email').value,
+      subject: this.contactForm.get('subject').value,
+      message: this.contactForm.get('message').value
+    }
+
+    this._sendEmailService.sendEmail("http://localhost:3000/sendmail", userContact).subscribe(
+      data => {
+        let result: any = data;
+        console.log(result);
+      },
+      (error) => {
+        console.log(error);
+        this.loading = false;
+        this.buttonText = "Envoyer";
+      },
+      () => {
+        this.loading = false;
+        this.buttonText = "Envoyer";
+      }
+    )
   }
 
 }
