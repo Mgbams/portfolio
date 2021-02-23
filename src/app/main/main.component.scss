@@ -573,6 +573,10 @@ svg {
 
 //Stacked cards
 .stacked-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   h1 {
     color: #3e3e42;
     font-size: 32px;
@@ -616,7 +620,7 @@ svg {
     box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.6);
     // cursor: pointer;
     display: inline-block;
-    height: 250px;
+    height: 150px;
     overflow: hidden;
     perspective: 1200px;
     position: relative;
@@ -649,6 +653,13 @@ svg {
     z-index: 0;
   }
 
+  //width of the tile cards
+  .card__one,
+  .card__two,
+  .card__three,
+  .card__four {
+    width: 100px;
+  }
   .card__one {
     .card__img,
     .card__img2 {
@@ -706,7 +717,7 @@ svg {
   }
 
   .card__title {
-    color: #fff;
+    color: white;
     font-size: 18px;
     font-weight: 700;
     padding: 0 10px;
