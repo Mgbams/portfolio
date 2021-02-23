@@ -163,13 +163,53 @@
             </mat-list>
           </mat-step>
 
-          <!--Billing address is made optional-->
+          <!--Expérience professionnelles-->
 
-          <mat-step label="Expériences professionnelles" optional>
-            <p>Billing Address Details</p>
-            <div>
-              <p>Go to a different step to see the error state</p>
-            </div>
+          <mat-step label="Expériences professionnelles">
+            <mat-list class="experience-lists">
+              <mat-list-item style="margin-bottom: 60px">
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>
+                  <span style="color: #00887a">Développeur web full-stack</span
+                  ><br />
+                  D'août 2020 à octobre 2020<br />
+                  A World to work / 42 Chemin du Moulin Carron,<br />
+                  69130 ECULLY
+                </div>
+              </mat-list-item>
+
+              <mat-list-item
+                class="experience-items"
+                style="margin-bottom: 50px"
+              >
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>
+                  <span style="color: #00887a"
+                    >Gérant d’un magasin de vente<br />
+                    d’accessoires et pièces détachées <br />
+                    informatique</span
+                  ><br />
+                  De mars 2012 à novembre 2015<br />
+                  Easy Technology / Benin City, Nigeria
+                </div>
+              </mat-list-item>
+
+              <mat-list-item class="experience-items">
+                <mat-icon mat-list-icon class="design-tab-icon"
+                  >stream</mat-icon
+                >
+                <div mat-line>
+                  <span style="color: #00887a">Technicien en informatique</span
+                  ><br />
+                  De janvier 2010 à février 2012<br />
+                  Unique Institue / Owerri, Nigeria
+                </div>
+              </mat-list-item>
+            </mat-list>
           </mat-step>
 
           <mat-step label="Compétences">
