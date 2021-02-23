@@ -57,15 +57,16 @@ export class MainComponent implements OnInit {
 
   createForm() {
     let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(9)]],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.pattern(emailregex)]],
       subject: ['', [Validators.required]],
       message: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
-   getErrorEmail() {
+  getErrorEmail() {
     return this.contactForm.get('email').hasError('required') ? 'Field is required' :
       this.contactForm.get('email').hasError('pattern') ? 'Not a valid emailaddress': ""
   }
