@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {NgwWowService} from 'ngx-wow';
 import {  Contact } from './../models/contact.model';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, FormArray } from '@angular/forms';
 //import {MatSnackBar} from '@angular/material/snack-bar';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+//import jsPDF from 'jspdf';
+import * as jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 import {SendEmailService} from './../shared/send-email.service';
 
@@ -18,6 +21,49 @@ export class MainComponent implements OnInit {
   contactForm: FormGroup;
   loading: boolean = false;
   buttonText: string = "Envoyer";
+
+  // Pdf reference element
+  @ViewChild('htmlData') htmlData: ElementRef;
+  
+
+   USERS = [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "email": "sincere@april.biz",
+      "phone": "1-770-736-8031 x56442"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "email": "shanna@melissa.tv",
+      "phone": "010-692-6593 x09125"
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "email": "nathan@yesenia.net",
+      "phone": "1-463-123-4447",
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "email": "julianne@kory.org",
+      "phone": "493-170-9623 x156"
+    },
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "email": "lucio@annie.ca",
+      "phone": "(254)954-1289"
+    },
+    {
+      "id": 6,
+      "name": "Mrs. Dennis",
+      "email": "karley@jasper.info",
+      "phone": "1-477-935-8478 x6430"
+    }
+  ];
  
   constructor(
     private wowService: NgwWowService, 
@@ -128,7 +174,9 @@ export class MainComponent implements OnInit {
   onSubmit() {
     if (this.contactForm.valid) {
      //this.openSnackBar("Message successfully sent!", "");
-      this.successNotification();
+    //this.successNotification();
+    this.sendEmail();
+
 
       /* Reset Form controls on submission */
       this.contactForm.reset();
@@ -145,8 +193,8 @@ export class MainComponent implements OnInit {
   // }
 
   //Sweet alert notification
-  successNotification(){
-    Swal.fire(`Hi, ${this.contactForm.get('name').value}`, 'Votre message a été envoyé avec succès!', 'success')
+  successNotification(name){
+    Swal.fire(`Hi, ${name}`, 'Votre message a été envoyé avec succès!', 'success')
   }
 
   sendEmail() {
@@ -160,11 +208,8 @@ export class MainComponent implements OnInit {
       message: this.contactForm.get('message').value
     }
 
-    this._sendEmailService.sendEmail("http://localhost:3000/sendmail", userContact).subscribe(
-      data => {
-        let result: any = data;
-        console.log(result);
-      },
+    this._sendEmailService.sendEmail(userContact).subscribe(
+      data => this.successNotification(userContact.name),
       (error) => {
         console.log(error);
         this.loading = false;
@@ -175,6 +220,24 @@ export class MainComponent implements OnInit {
         this.buttonText = "Envoyer";
       }
     )
+  }
+
+  
+  public openPDF():void {
+    let DATA = document.getElementById('htmlData');
+      
+    html2canvas(DATA).then(canvas => {
+        let fileWidth = 208;
+        let fileHeight = canvas.height * fileWidth / canvas.width;
+        
+        const FILEURI = canvas.toDataURL('image/png');
+        let PDF = new jsPDF('p', 'mm', 'a4'); 
+        let position = 0;
+        PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+        
+        PDF.save('angular-demo.pdf');
+    }); 
+    
   }
 
 }

@@ -9,17 +9,21 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class SendEmailService {
+  baseUrl = 'http://localhost:8000/api/send/email';
 
   constructor(private http: HttpClient) { }
 
-  sendEmail(url, contact: Contact): Observable<Contact> {
-    return this.http.post<Contact>(url, contact, {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json'
-          })
-        }).pipe(catchError(this.handleError));
-  }
+  sendEmail(contact: Contact): Observable<Contact> {
+    const httpOptions = {
+        headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods' : 'GET, POST, PUT, DELETE'
+        })
+    };
 
+    return this.http.post<Contact>(`${this.baseUrl}`, JSON.stringify(contact), httpOptions).pipe(catchError(this.handleError));
+  }
 
   private handleError(errorResponse: HttpErrorResponse) {
       if(errorResponse.error instanceof ErrorEvent) {
