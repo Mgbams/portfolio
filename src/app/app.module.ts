@@ -10,6 +10,7 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgwWowModule } from 'ngx-wow';
 import { HttpClientModule } from '@angular/common/http';
+import { FileSaverModule } from 'ngx-filesaver';
 
 //import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     NgwWowModule,
     //MatSnackBarModule,
+     FileSaverModule,
     HttpClientModule,
     AppRoutingModule
   ],

@@ -60,32 +60,52 @@
       ></path>
     </svg>
   </div>
+
+  <!-- Github and linkedin social links -->
+  <div style="position: relative; top: 80vh; left: 5% !important">
+    <ul class="animate-links">
+      <li>
+        <a href="https://github.com/Mgbams" target="_blank">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="fab fa-github-square"></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/kingsley-mgbams-33b781155/"
+          target="_blank"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="fab fa-linkedin"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <section>
   <!-- just to make scrolling effect possible -->
   <h2 class="myH2" style="margin-top: 20px">What is this ?</h2>
-  <div class="col-md-4 text-right">
-    <button class="btn btn-success btn-block" (click)="openPDF()">
-      Download PDF
-    </button>
-  </div>
-  <div class="col-md-8" id="htmlData">
-    <table class="table table-bordered">
-      <tr class="table-primary">
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-      </tr>
-      <tr *ngFor="let user of USERS">
-        <th>{{ user.id }}</th>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.phone }}</td>
-      </tr>
-    </table>
-  </div>
+
+  <button
+    type="button"
+    fileSaver
+    [method]="'GET'"
+    [fileName]="'Mgbams_CV.pdf'"
+    [url]="'assets/mgbams_cv.pdf'"
+    [header]="{ token: 'mgbams' }"
+    [query]="{ pi: 1, name: 'mgbams' }"
+    (success)="onSuc($event)"
+    (error)="onErr($event)"
+  >
+    Download PDF
+  </button>
 </section>
 
 <div id="about">
