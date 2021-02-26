@@ -101,8 +101,6 @@
     [url]="'assets/mgbams_cv.pdf'"
     [header]="{ token: 'mgbams' }"
     [query]="{ pi: 1, name: 'mgbams' }"
-    (success)="onSuc($event)"
-    (error)="onErr($event)"
   >
     Download PDF
   </button>
@@ -114,7 +112,7 @@
       <div
         class="left-div wow slideInLeft"
         data-wow-duration="2s"
-        data-wow-delay=".1s"
+        data-wow-delay=".0001s"
       >
         <mat-chip-list aria-label="name" class="a-propos-div">
           <mat-chip class="a-propos-title"
@@ -363,18 +361,14 @@
       </div>
 
       <!--middle div-->
-      <div
-        class="middle-div wow bounceInDown"
-        data-wow-duration="2s"
-        data-wow-delay=".1s"
-      >
+      <div class="middle-div">
         <!--profile photo here-->
       </div>
 
       <div
         class="right-div wow slideInRight"
         data-wow-duration="2s"
-        data-wow-delay=".1s"
+        data-wow-delay=".0001s"
       >
         <h5 class="qui-suis-je">qui suis je</h5>
         <mat-chip-list aria-label="name" class="my-name">
@@ -421,7 +415,7 @@
     <h2
       class="service-offerts wow slideInLeft"
       data-wow-duration="3s"
-      data-wow-delay=".6s"
+      data-wow-delay=".0003s"
     >
       Services offerts
     </h2>
