@@ -104,6 +104,11 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  // increase width of social icons
+  .animate-links {
+    width: 50vw !important;
+  }
+
   .about-card .a-propos-div,
   .my-name {
     width: 100%;
@@ -1011,7 +1016,10 @@ input {
 }
 
 // Social links animation
-
+.animated-socials-containers {
+  position: relative;
+  top: 80vh;
+}
 .animate-links {
   position: relative;
   display: flex;
@@ -1021,7 +1029,6 @@ input {
   transform-style: preserve-3d;
   z-index: 5;
   width: 40vw;
-  padding: 20px 0px;
 }
 .animate-links li a {
   color: white;

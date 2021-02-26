@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {NgwWowService} from 'ngx-wow';
-import {  Contact } from './../models/contact.model';
-import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, FormArray } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 //import {MatSnackBar} from '@angular/material/snack-bar';
+import {NgwWowService} from 'ngx-wow';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { NgxSpinnerService } from "ngx-spinner";
 
 import {SendEmailService} from './../shared/send-email.service';
 
@@ -17,14 +18,13 @@ declare var $: any;
 })
 export class MainComponent implements OnInit {
   contactForm: FormGroup;
-  loading: boolean = false;
-  buttonText: string = "Envoyer";
  
   constructor(
     private wowService: NgwWowService, 
     private fb: FormBuilder, 
     //private _snackBar: MatSnackBar,
-    private _sendEmailService: SendEmailService
+    private _sendEmailService: SendEmailService,
+    private _spinner: NgxSpinnerService
     ) {}
 
   ngOnInit(): void {
@@ -153,8 +153,8 @@ export class MainComponent implements OnInit {
   }
 
   sendEmail() {
-    this.loading = true;
-    this.buttonText = "Envoyer .....";
+    //Load spinner
+    this._spinner.show();  
 
     let userContact = {
       name: this.contactForm.get('name').value,
@@ -164,15 +164,16 @@ export class MainComponent implements OnInit {
     }
 
     this._sendEmailService.sendEmail(userContact).subscribe(
-      data => this.successNotification(userContact.name),
+      () => {
+        // Hide spinner
+        this._spinner.hide();  
+        this.successNotification(userContact.name);
+      },
       (error) => {
         console.log(error);
-        this.loading = false;
-        this.buttonText = "Envoyer";
       },
       () => {
-        this.loading = false;
-        this.buttonText = "Envoyer";
+        //console.log('sent');
       }
     )
   }

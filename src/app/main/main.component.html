@@ -62,7 +62,7 @@
   </div>
 
   <!-- Github and linkedin social links -->
-  <div style="position: relative; top: 80vh; left: 5% !important">
+  <div class="animated-socials-containers">
     <ul class="animate-links">
       <li>
         <a href="https://github.com/Mgbams" target="_blank">
@@ -912,6 +912,17 @@
         </button>
       </div>
     </form>
+
+    <!--Spinner during form submission-->
+    <ngx-spinner
+      bdColor="rgba(0, 0, 0, 0.8)"
+      size="medium"
+      color=" #00887a"
+      type="square-jelly-box"
+      [fullScreen]="true"
+    >
+      <p style="color: white">Loading...</p>
+    </ngx-spinner>
   </div>
 </div>
 

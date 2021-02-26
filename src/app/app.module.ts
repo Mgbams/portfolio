@@ -12,7 +12,8 @@ import { NgwWowModule } from 'ngx-wow';
 import { HttpClientModule } from '@angular/common/http';
 import { FileSaverModule } from 'ngx-filesaver';
 
-//import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+//import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NgxSpinnerModule } from "ngx-spinner"; 
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { FileSaverModule } from 'ngx-filesaver';
     //MatSnackBarModule,
      FileSaverModule,
     HttpClientModule,
+     NgxSpinnerModule,
     AppRoutingModule
   ],
   providers: [],
