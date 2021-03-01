@@ -18,6 +18,8 @@ declare var $: any;
 })
 export class MainComponent implements OnInit {
   contactForm: FormGroup;
+  // isActiveMyName: boolean = true;
+  // isActiveDeveloper: boolean = false;
  
   constructor(
     private wowService: NgwWowService, 
@@ -28,6 +30,12 @@ export class MainComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
+    //Setinterval
+    // setInterval(() => { 
+    //  this.isActiveDeveloper = !this.isActiveDeveloper;
+    //  this.isActiveMyName = !this.isActiveMyName;
+    // }, 5000);
+
     // Contact form Using FormBuilder approach
     this.createForm();     
 
