@@ -20,3 +20,13 @@ body {
   color: white;
   background-color: #00887a;
 } */
+
+// Change the default form field colours
+.mat-form-field-outline,
+.mat-form-field-empty.mat-form-field-label,
+.mat-form-field-label,
+.mat-form-field-underline,
+.mat-input-element,
+::placeholder {
+  color: white !important;
+}

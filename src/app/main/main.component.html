@@ -93,17 +93,33 @@
   <!-- just to make scrolling effect possible -->
   <h2 class="myH2" style="margin-top: 20px">What is this ?</h2>
 
-  <button
-    type="button"
-    fileSaver
-    [method]="'GET'"
-    [fileName]="'Mgbams_CV.pdf'"
-    [url]="'assets/mgbams_cv.pdf'"
-    [header]="{ token: 'mgbams' }"
-    [query]="{ pi: 1, name: 'mgbams' }"
-  >
-    Download PDF
-  </button>
+  <!--ANOTHER BUTTON-->
+  <div style="position: relative; bottom: 70vh; margin-left: 45vw">
+    <button class="btn-download">
+      <span class="btn-text">Download</span>
+      <ul class="download-icon">
+        <li>
+          <a
+            type="button"
+            fileSaver
+            [method]="'GET'"
+            [fileName]="'Mgbams_CV.pdf'"
+            [url]="'assets/mgbams_cv.pdf'"
+            [header]="{ token: 'mgbams' }"
+            [query]="{ pi: 1, name: 'mgbams' }"
+          >
+            <mat-icon
+              aria-hidden="false"
+              aria-label="download-icon"
+              style="color: white"
+              class="download"
+              >download</mat-icon
+            >
+          </a>
+        </li>
+      </ul>
+    </button>
+  </div>
 </section>
 
 <div id="about">
@@ -895,12 +911,7 @@
 
       <!--Send button-->
       <div>
-        <button
-          mat-raised-button
-          color="warn"
-          class="send-button"
-          type="submit"
-        >
+        <button mat-raised-button class="send-button" type="submit">
           <mat-icon class="mat-icon-send">send</mat-icon>
           Envoyer
         </button>
