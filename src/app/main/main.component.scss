@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 html,
 body {
   margin: 0;
@@ -7,6 +8,21 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 62.5%;
   font-size: 10px;
+}
+
+.service-offerts,
+.about-header {
+  color: #00887a;
+  padding: 40px 0px;
+  text-align: center;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 3px 0 #aaa, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 3px rgba(0, 0, 0, 0.1),
+    0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 3px 7px rgba(0, 0, 0, 0.25), 0 7px 7px rgba(0, 0, 0, 0.1),
+    0 17px 17px rgba(0, 0, 0, 0.15);
 }
 
 // Horizontal stepper hidden for large screen
@@ -32,10 +48,11 @@ body {
   padding-left: 3rem;
 }
 
-.nav div.logo a {
+.nav div.logo span {
   text-decoration: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
 }
 
 .nav div.logo a:hover {
@@ -104,6 +121,32 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  //name and job title animation
+  .name-and-job-title {
+    line-height: 30px;
+    width: 80% !important;
+    margin: auto !important;
+    .lastname-container {
+      display: block !important;
+      margin-top: 10px;
+    }
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    .info {
+      font-size: 1.2rem;
+    }
+    span {
+      font-size: 1.3rem;
+    }
+  }
+
+  // Download Button
+  .btn-download {
+    right: 10vw;
+  }
+
   // increase width of social icons
   .animate-links {
     width: 50vw !important;
@@ -865,19 +908,6 @@ input {
   mat-tab:not(:last-child) {
     margin-right: 50px;
   }
-  .service-offerts {
-    color: #00887a;
-    padding: 40px 0px;
-    text-align: center;
-    font-size: 3.5rem;
-    letter-spacing: 4px;
-    word-spacing: 4px;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-      0 3px 0 #aaa, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 3px rgba(0, 0, 0, 0.1),
-      0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
-      0 3px 7px rgba(0, 0, 0, 0.25), 0 7px 7px rgba(0, 0, 0, 0.1),
-      0 17px 17px rgba(0, 0, 0, 0.15);
-  }
 }
 
 // Services
@@ -1206,5 +1236,35 @@ input {
         }
       }
     }
+  }
+}
+
+/* Animate name and job title*/
+.name-and-job-title {
+  color: white;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: 77vh;
+  .lastname-container {
+    display: inline;
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .info {
+    font-size: 1.5rem;
+    display: none;
+    margin-top: 15px;
+  }
+  span {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .firstname:not(:first-of-type) {
+    display: none;
   }
 }

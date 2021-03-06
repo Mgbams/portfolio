@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { interval, Subscription} from 'rxjs';
 
 //import {MatSnackBar} from '@angular/material/snack-bar';
 import {NgwWowService} from 'ngx-wow';
@@ -18,8 +19,9 @@ declare var $: any;
 })
 export class MainComponent implements OnInit {
   contactForm: FormGroup;
-  // isActiveMyName: boolean = true;
+   isActive: boolean = true;
   // isActiveDeveloper: boolean = false;
+  mySubscription: Subscription
  
   constructor(
     private wowService: NgwWowService, 
@@ -27,16 +29,18 @@ export class MainComponent implements OnInit {
     //private _snackBar: MatSnackBar,
     private _sendEmailService: SendEmailService,
     private _spinner: NgxSpinnerService
-    ) {}
+    ) {
+      // this.mySubscription= interval(5000).subscribe((x =>{
+      //           this.animateTitleAndName();
+      //           console.log('hello');
+      //       }));
+    }
 
   ngOnInit(): void {
-    //Setinterval
-    // setInterval(() => { 
-    //  this.isActiveDeveloper = !this.isActiveDeveloper;
-    //  this.isActiveMyName = !this.isActiveMyName;
-    // }, 5000);
+    //Animate name and title
+    this.animateTitleAndName();
 
-    // Contact form Using FormBuilder approach
+    //Load create Form
     this.createForm();     
 
     $(window).scroll(function () {
@@ -72,6 +76,23 @@ export class MainComponent implements OnInit {
    
     /***Initialize wojs Animation as shown below ***/
     this.wowService.init();
+  }
+
+  animateTitleAndName() {
+     $(document).ready(() => {
+        setInterval(() => {
+            var firstnameLength = $(".firstname").length;
+            $($(".firstname").get()).each((i, e) => {
+                $(e).delay(500 * (i - 1)).fadeIn(500);
+                if(i >= firstnameLength - 1) {
+                    $(e).animate({
+                        "margin-right": "12px"
+                    }, 500);
+                    $(".info").delay(700 * i).fadeIn(1500);
+                }
+            });
+        }, 1000);
+    });
   }
 
   createForm() {
